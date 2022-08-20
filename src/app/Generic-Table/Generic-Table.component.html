@@ -1,0 +1,20 @@
+<h1 style="text-align: center;text-decoration: dotted;color: blue;">
+  Generic Table works!
+</h1>
+
+<table class="table table-striped table-inverse table-responsive">
+  <thead class="thead-inverse">
+    <tr>
+      <th *ngFor="let item of header">{{item.key}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of personList">
+      <td scope="row" *ngFor="let item of header">
+        <div *ngIf="!item.dataType">{{person[item.value]}}</div>
+        <div *ngIf="item.dataType=='Date'">{{person[item.value]|date:'short'}}</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

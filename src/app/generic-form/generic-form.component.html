@@ -1,0 +1,16 @@
+<h1 style="text-align: center;text-decoration: dotted;color: blue;">
+  Generic Form works!
+</h1>
+<div class="formStyle" [formGroup]="group" >
+  <div class="row">
+    <div class="col-4" *ngFor="let data of data">
+      <fieldset>
+        <label>{{data.label}}</label>
+        <input class="form-control" type="{{data.type}}" formControlName="{{data.value}}">
+      </fieldset>
+    </div>
+  </div>
+
+</div>
+
+{{group.value|json}}
